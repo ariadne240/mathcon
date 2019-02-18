@@ -3,7 +3,7 @@ import System.IO
 import System.Process
 import Fancyput
 -- Configuration
--- e.g. (1, 2, 3, "4")
+-- e.g. (1, 2, 3, "theoryname")
 data Cfig = Cfig Int Int Int String deriving (Eq, Ord, Show)
 
 main :: IO ()
@@ -16,7 +16,7 @@ main = do
  -- c2 <- config2 (,,)
  -- c3 <- config3 (,,)
  -- c4 <- config3 (,,)
- welcome (Cfig 1 2 3 "4") -- (Cfig c1 c2 c3)
+ welcome (Cfig 1 2 3 "theory1") -- (Cfig c1 c2 c3 c4)
 
 welcome :: Cfig -> IO ()
 welcome cfig = do
@@ -30,18 +30,16 @@ welcome cfig = do
  let cmd = (head . words) w
  case (cmd) of
   "end"     -> shutdown
-  "setting" -> config cfig w >>= welcome
-  --"help"    -> fc id c fhelp
+  "setting" -> fcfig cfig w >>= welcome
+  "help"    -> fc cfig fhelp
   --"wf"      -> fc id c $ fwf c w
-  --"pf"      -> fc id c $ fpf c w
-  --"vbpf"    -> fc id c $ fvbpf c w
   otherwise -> fc cfig fexception
 -- fc for function call
 fc :: Cfig -> IO () -> IO ()
 fc cfig = (>> welcome cfig)
 -- function config
-config :: Cfig -> String -> IO Cfig
-config cfig w = do
+fcfig :: Cfig -> String -> IO Cfig
+fcfig cfig w = do
  let ww = words w
  if (length ww == 1)
   then do
@@ -54,16 +52,19 @@ config cfig w = do
    --cft <- putconch "cft> "
    return cfig
   else return cfig
+-- function help
+fhelp :: IO ()
+fhelp = putStrLn "" >> mc "Help" >> readFile "help" >>= putStr >> putStrLn ""
 -- function shutdown
-shutdown :: IO()
+shutdown :: IO ()
 shutdown = do
  putStrLn ""
  mc "Shutdown"
  putStrLn "Good bye."
- putStrLn "Mathverse Shutting down..."
+ putStrLn "Mathcon Shutting down..."
  putStrLn ""
 -- function exception
-fexception :: IO()
+fexception :: IO ()
 fexception = do
  putStrLn ""
  mc "Exception"
