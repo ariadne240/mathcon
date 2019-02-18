@@ -1,1 +1,27 @@
-README
+MATHCON README
+-----------------------------------------------------------------------------
+A pretheory consists of two parts. The first part is for wf-verifier.
+The second part is for pf-verifiers and can have multiple functions.
+A common example is like this:
+#(
+You can use comments by writing memos in #( #).
+#)
+#1
+wf :: String -> Bool
+#2
+pf1 :: [String] -> Bool
+pf2 :: [String] -> Bool
+pf3 :: [String] -> Bool
+-----------------------------------------------------------------------------
+STEP 0: Pretheory Speculation -> Pretheory (plugin1)
+STEP 1, Registration: Pretheory -> Theory (register In main)
+STEP 2, Theory Setting: Theory -> Usable (setth In main)
+STEP 3, Usable Employment: Usable -> Interact
+-----------------------------------------------------------------------------
+plugin2 for metatheorems (rulec, ...)
+-----------------------------------------------------------------------------
+To compile "main", do:
+ghc -o main main.hs -igenlib
+-----------------------------------------------------------------------------
+Metatheorems for proof theory
+Metatheorems for model theory
