@@ -25,3 +25,17 @@ ghc -o main main.hs -igenlib
 -----------------------------------------------------------------------------
 Metatheorems for proof theory
 Metatheorems for model theory
+-----------------------------------------------------------------------------
+There is a hidden folder: .hiddenplace
+You can see it by 'ls -a' command.
+What can we do with .hiddenplace?
+We can put pretheories we want inside 'pretheory' folder.
+And we can interpret the pretheory by transforming it to a theory.
+When we want special features to do with theories, we have to build a
+uber-pretheory which holds more information than normal theories.
+If we want a plenty of features, we need to save a text file for
+a pretheory. After it, we choose the way of interpretation in 'main',
+which means that we automatically build a 'theory' in folder '.hiddenplace'.
+And after this, we can use rich features in it by putting commands to the
+terminal in 'main'.
+For this, we need a revolutionary change in the structure of whole folder.
