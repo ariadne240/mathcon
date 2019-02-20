@@ -1,4 +1,4 @@
-ABOUT LICENSE:
+* ABOUT COPYRIGHT:
 Copyright (C) 2019 ariadne240. All rights reserved.
 I HAVE EXCLUSIVE RIGHTS TO THIS CODE AND PROGRAM. THIS IS NOT A FREE
 SOFTWARE. THE REDISTRIBUTION, IN SOURCE AND BINARY FORMS, WITH OR WITHOUT
@@ -7,6 +7,7 @@ MODIFICATION, IS NOT PERMITTED, UNDER ANY CONDITIONS.
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
+* ABOUT 3RD PARTY LICENSE:
 Several libraries in BSD-style license packages are used. It is planned
 to replace them to my own codes. BELOW ARE NOT THE LICENSE OF THIS PROGRAM.
 THEY ARE ONES OF THE (3RD-PARTY) PACKAGES USED IN THE CODE.
